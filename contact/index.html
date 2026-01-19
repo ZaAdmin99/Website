@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — ADM₹N</title>
+
+<link rel="icon" href="data:,">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Poppins,sans-serif;
+  user-select:none;
+}
+
+/* ===== CLICK TO ENTER ===== */
+#audio-unlock{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.9);
+  backdrop-filter:blur(14px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:2rem;
+  letter-spacing:3px;
+  color:cyan;
+  z-index:9999;
+  cursor:pointer;
+  text-shadow:0 0 30px cyan;
+  transition:.5s;
+}
+
+/* ===== BODY ===== */
+body{
+  height:100vh;
+  background:url("/public/galaxy.gif") center/cover fixed no-repeat;
+  color:white;
+  overflow:hidden;
+}
+
+/* ===== NAVBAR ===== */
+nav{
+  position:sticky;
+  top:0;
+  z-index:50;
+  padding:15px 40px;
+  background:rgba(0,0,0,.45);
+  backdrop-filter:blur(12px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 0 20px #00e5ff66;
+}
+
+nav a{
+  margin:0 12px;
+  color:white;
+  text-decoration:none;
+  transition:.25s;
+}
+
+nav a:hover{
+  color:#0ff;
+  text-shadow:0 0 12px cyan;
+}
+
+/* ===== VOLUME ===== */
+#volume-box{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:cyan;
+}
+
+#volume-slider{
+  width:90px;
+  accent-color:cyan;
+}
+
+/* ===== MAIN ===== */
+.main{
+  height:calc(100vh - 90px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* ===== CONTACT CARD ===== */
+.card{
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(15px);
+  border:1px solid #00e5ff66;
+  box-shadow:0 0 35px #00e5ff55;
+  padding:45px 45px;
+  border-radius:22px;
+  width:420px;
+  max-width:90%;
+  text-align:center;
+}
+
+.card h1{
+  font-size:2.4rem;
+  color:cyan;
+  text-shadow:0 0 20px cyan;
+}
+
+.card p{
+  opacity:.85;
+  margin:12px 0 25px;
+}
+
+/* ===== FORM ===== */
+input, textarea{
+  width:100%;
+  padding:14px 16px;
+  border-radius:12px;
+  border:none;
+  outline:none;
+  margin-bottom:15px;
+  background:rgba(0,0,0,.55);
+  color:white;
+  font-size:1rem;
+  box-shadow:0 0 10px #00e5ff44 inset;
+}
+
+textarea{
+  resize:none;
+  height:120px;
+}
+
+input::placeholder,
+textarea::placeholder{
+  color:#aaa;
+}
+
+/* ===== SEND BTN ===== */
+.send-btn{
+  width:100%;
+  padding:15px;
+  font-size:1.05rem;
+  border-radius:14px;
+  border:none;
+  background:cyan;
+  color:black;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 0 30px cyan;
+  transition:.3s;
+}
+
+.send-btn:hover{
+  transform:scale(1.07);
+  box-shadow:0 0 50px cyan;
+}
+
+/* ===== SOCIAL QUICK LINKS ===== */
+.quick{
+  margin-top:18px;
+  font-size:.9rem;
+  opacity:.8;
+}
+
+.quick span{
+  color:cyan;
+}
+
+/* ===== CREDITS BTN ===== */
+#credits-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  padding:14px 22px;
+  color:#0ff;
+  border:2px solid #00e5ff88;
+  border-radius:12px;
+  background:#00e5ff22;
+  transition:.35s;
+}
+
+#credits-btn:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 20px #00e5ff;
+}
+</style>
+</head>
+
+<body>
+
+<!-- CLICK TO ENTER -->
+<div id="audio-unlock">CLICK TO ENTER</div>
+
+<!-- NAVBAR -->
+<nav>
+  <div>
+    <a href="/">Home</a>
+    <a href="/giftify">Giftify</a>
+    <a href="/clark">Clark</a>
+    <a href="/contact">Contact</a>
+    <a href="/projects">Projects</a>
+    <a href="/credits">Credits</a>
+  </div>
+
+  <div id="volume-box">
+    🔊
+    <input id="volume-slider" type="range" min="0" max="1" step="0.01" value="0.4">
+  </div>
+</nav>
+
+<!-- MAIN -->
+<div class="main">
+
+  <div class="card">
+
+    <h1>Contact ADM₹N 🚀</h1>
+    <p>Business, collabs or W ideas? Drop it below.
+      If it doesn't work, try the following:
+      · Open Gmail
+      · Click 🔔 icon in URL bar
+      · Click Allow
+    </p>
+
+    <form id="contactForm">
+
+      <input id="name" type="text" placeholder="Your Name" required>
+
+      <input id="email" type="email" placeholder="Your Email" required>
+
+      <textarea id="msg" placeholder="Your Message" required></textarea>
+
+      <button class="send-btn" type="submit">
+        Send Message ✨
+      </button>
+
+    </form>
+
+    <div class="quick">
+      Or email directly: <span>yt.adm.n99@gmail.com</span>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- CREDITS -->
+<a id="credits-btn" href="/credits">Credits</a>
+
+<!-- MUSIC -->
+<audio id="bg-music" src="/public/music/mm2.mp3" loop></audio>
+
+<script>
+/* ===== AUDIO ===== */
+const music = document.getElementById("bg-music");
+const unlock = document.getElementById("audio-unlock");
+const slider = document.getElementById("volume-slider");
+
+music.volume = 0.4;
+
+unlock.onclick = () => {
+  music.play().catch(()=>{});
+  unlock.style.opacity="0";
+  setTimeout(()=>unlock.remove(),500);
+};
+
+slider.oninput = e => {
+  music.volume = e.target.value;
+};
+
+/* ===== SAFE MAILTO HANDLER ===== */
+document.getElementById("contactForm").addEventListener("submit", e => {
+  e.preventDefault();
+
+  const name = encodeURIComponent(document.getElementById("name").value);
+  const email = encodeURIComponent(document.getElementById("email").value);
+  const msg = encodeURIComponent(document.getElementById("msg").value);
+
+  const mail = `mailto:yt.adm.n99@gmail.com?subject=Message from ${name}&body=Email: ${email}%0D%0A%0D%0A${msg}`;
+
+  window.location.href = mail;
+});
+</script>
+
+</body>
+</html>

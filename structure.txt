@@ -1,0 +1,29 @@
+Folder PATH listing for volume ADM?N's
+Volume serial number is 2A5A-0FEA
+C:.
+³   .gitignore
+³   index.html
+³   structure.txt
+³   
+ÃÄÄÄclark
+³       index.html
+³       
+ÃÄÄÄcontact
+³       index.html
+³       
+ÃÄÄÄcredits
+³       index.html
+³       
+ÃÄÄÄgiftify
+³       index.html
+³       
+ÃÄÄÄprojects
+³       index.html
+³       
+ÀÄÄÄpublic
+    ³   galaxy.gif
+    ³   giftify.zip
+    ³   
+    ÀÄÄÄmusic
+            mm2.mp3
+            

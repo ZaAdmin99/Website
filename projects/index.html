@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects • ADM₹N</title>
+<link rel="icon" href="data:,">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins,sans-serif;
+    user-select:none;
+}
+
+/* ===== CLICK TO ENTER ===== */
+#audio-unlock{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.9);
+    backdrop-filter:blur(14px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:cyan;
+    font-size:2rem;
+    letter-spacing:3px;
+    cursor:pointer;
+    z-index:9999;
+    text-shadow:0 0 25px cyan;
+    transition:.5s;
+}
+
+/* ===== BODY ===== */
+body{
+    background:url("/public/galaxy.gif") center/cover fixed no-repeat;
+    color:white;
+    overflow:hidden;
+}
+
+/* ===== NAV ===== */
+nav{
+    position:sticky;
+    top:0;
+    padding:15px 40px;
+    background:rgba(0,0,0,.45);
+    backdrop-filter:blur(12px);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 0 20px #00e5ff66;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 12px;
+    transition:.25s;
+}
+
+nav a:hover{
+    color:#0ff;
+    text-shadow:0 0 12px #00e5ff;
+}
+
+/* ===== VOLUME ===== */
+#volume-box{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:cyan;
+}
+
+#volume-slider{
+    width:90px;
+    accent-color:cyan;
+}
+
+/* ===== TITLE ===== */
+.title{
+    text-align:center;
+    margin-top:120px;
+}
+
+.title h1{
+    font-size:3rem;
+    text-shadow:0 0 18px #00e5ff;
+}
+
+/* ===== PROJECT BUBBLES ===== */
+.projects{
+    margin-top:80px;
+    display:flex;
+    justify-content:center;
+    gap:50px;
+}
+
+.project{
+    width:260px;
+    height:260px;
+    border-radius:50%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background:rgba(255,255,255,.06);
+    backdrop-filter:blur(16px);
+    border:1px solid #00e5ff55;
+    box-shadow:0 0 25px #00e5ff44;
+    cursor:pointer;
+    transition:.35s;
+}
+
+.project:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 45px #00e5ff;
+}
+
+.project h2{
+    color:#0ff;
+    margin-bottom:8px;
+}
+
+.project p{
+    font-size:.9rem;
+    opacity:.85;
+}
+
+/* ===== CREDITS BTN ===== */
+#credits-btn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    padding:14px 22px;
+    color:#0ff;
+    border:2px solid #00e5ff88;
+    border-radius:12px;
+    background:#00e5ff22;
+    transition:.35s;
+}
+
+#credits-btn:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 20px #00e5ff;
+}
+</style>
+</head>
+
+<body>
+
+<!-- CLICK TO ENTER -->
+<div id="audio-unlock">CLICK TO ENTER</div>
+
+<!-- NAV -->
+<nav>
+<div>
+    <a href="/">Home</a>
+    <a href="/Giftify">Giftify</a>
+    <a href="/Clark">Clark</a>
+    <a href="/Contact">Contact</a>
+    <a href="/Projects" class="active">Projects</a>
+    <a href="/Credits">Credits</a>
+</div>
+
+<div id="volume-box">
+🔊
+<input id="volume-slider" type="range" min="0" max="1" step="0.01" value="0.4">
+</div>
+</nav>
+
+<!-- TITLE -->
+<div class="title">
+<h1>Projects</h1>
+</div>
+
+<!-- PROJECT BUBBLES -->
+<div class="projects">
+
+<div class="project" onclick="location.href='/Giftify'">
+<h2>Giftify</h2>
+<p>Gifting powerhouse</p>
+</div>
+
+<div class="project" onclick="location.href='/Clark'">
+<h2>Clark AI</h2>
+<p>Coming soon</p>
+</div>
+
+</div>
+
+<a id="credits-btn" href="/Credits">Credits</a>
+
+<audio id="bg-music" src="/public/music/mm2.mp3" loop></audio>
+
+<script>
+/* ===== AUDIO ===== */
+const music=document.getElementById("bg-music");
+music.volume=.4;
+
+const unlock=document.getElementById("audio-unlock");
+unlock.onclick=()=>{
+    music.play();
+    unlock.style.opacity="0";
+    setTimeout(()=>unlock.remove(),500);
+};
+
+document.getElementById("volume-slider").oninput=e=>{
+    music.volume=e.target.value;
+};
+</script>
+
+</body>
+</html>
